@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>Cours Python</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      
+    <style>
+    div.hidden {
+    opacity: 0.1;
+    }
+    </style>      
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Python</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/contact">Contacts</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Bienvenue sur le cours python Orsys</h1>
+    <h2>Resultat : {{ resultat }}</h2>
+    <img src="/uploads/{{hist_file}}" />
+    <p><a href="/contact">Mes contacts</a>bldk,gvdkglsdngsdlkgndslkgklsdgs</p>
+    
+    <div class="row">
+        <form class="col s12" action="/execute" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="input-field col m12 l6">
+              <input id="first_name" name="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col m12 l6">
+              <input id="last_name" name="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+
+            <div class="input-field col m12 l6">
+                <select name="metric">
+                  <option value="mean" selected>Moyenne</option>
+                  <option value="median">Mediane</option>
+                  <option value="min">Minimum</option>
+                  <option value="max">Maximum</option>
+                </select>
+                <label>Metrics</label>
+            </div>
+
+            <div class="input-field col m12 l6">
+                <select name="column">
+                  <option value="Age" selected>Age</option>
+                  <option value="Fare">Fare</option>
+                </select>
+                <label>Colonne</label>
+            </div>
+
+            <div class="input-field col m12 l6">
+              <input id="file" name="file" type="file" class="validate">
+            </div>
+
+            <div class="input-field col m12 l6 hidden">
+              <input id="tel" name="tel" type="tel" class="validate">
+              <label for="tel">Telephone</label>
+            </div>
+          </div>
+                    
+          <button type="submit" class="btn">Valider</button>
+        </form>
+    </div>
+    
+  </div>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
+  });
+
+  </script>
+</body>
+
+</html>
